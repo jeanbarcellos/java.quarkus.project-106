@@ -11,7 +11,7 @@ import org.apache.commons.lang3.ObjectUtils;
 
 import com.fasterxml.jackson.databind.JsonMappingException.Reference;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
-import com.jeanbarcellos.Constants;
+import com.jeanbarcellos.core.Constants;
 import com.jeanbarcellos.core.dto.ErrorResponse;
 import com.jeanbarcellos.core.validation.Validator;
 

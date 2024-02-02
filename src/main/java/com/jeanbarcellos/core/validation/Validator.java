@@ -8,7 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.validation.ConstraintViolation;
 
-import com.jeanbarcellos.Constants;
+import com.jeanbarcellos.core.Constants;
 import com.jeanbarcellos.core.exception.ValidationException;
 
 @ApplicationScoped

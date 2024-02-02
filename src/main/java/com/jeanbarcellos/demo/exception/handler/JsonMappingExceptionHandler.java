@@ -7,7 +7,7 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.jeanbarcellos.Constants;
+import com.jeanbarcellos.core.Constants;
 import com.jeanbarcellos.core.dto.ErrorResponse;
 
 import lombok.extern.slf4j.Slf4j;
