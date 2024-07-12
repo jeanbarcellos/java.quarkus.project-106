@@ -24,20 +24,21 @@ public class Validator {
     }
 
     public <T> void validateWithException(T model) {
-        var restricoes = this.validate(model);
+        var constraints = this.validate(model);
 
-        if (!restricoes.isEmpty()) {
-            throw createValidateException(restricoes);
+        if (!constraints.isEmpty()) {
+            throw createValidationException(constraints);
         }
     }
 
-    public static <T> ValidationException createValidateException(Set<ConstraintViolation<T>> restricoes) {
-        return ValidationException.of(Constants.MSG_ERROR_VALIDATION, createMessages(restricoes));
+    private static <T> ValidationException createValidationException(Set<ConstraintViolation<T>> constraints) {
+        return ValidationException.of(Constants.MSG_ERROR_VALIDATION, createMessages(constraints));
     }
 
-    public static <T> List<String> createMessages(Set<ConstraintViolation<T>> restricoes) {
-        return restricoes.stream()
-                .map(cv -> String.format(MSG_ERROR, cv.getPropertyPath().toString(), cv.getMessage()))
+    private static <T> List<String> createMessages(Set<ConstraintViolation<T>> constraints) {
+        return constraints.stream()
+                .map(constraint -> String.format(MSG_ERROR,
+                        constraint.getPropertyPath().toString(), constraint.getMessage()))
                 .collect(Collectors.toList());
     }
 
